@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venue Tracker Admin</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body>
+  <div class="container">
+    <div id="loginView" class="panel login-box">
+      <h1>Admin login</h1>
+      <p class="subtitle">Use your admin password to manage venues.</p>
+      <div class="form-grid" style="margin-top: 16px;">
+        <input id="passwordInput" type="password" placeholder="Password" />
+        <button id="loginBtn" class="primary">Log in</button>
+        <div id="loginError" class="small"></div>
+      </div>
+    </div>
+
+    <div id="adminView" class="hidden">
+      <div class="topbar">
+        <div>
+          <h1>Venue Tracker Admin</h1>
+          <div class="subtitle">Edit venues, replace the list, or export it.</div>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <a href="/"><button class="soft">View site</button></a>
+          <button id="logoutBtn" class="danger">Log out</button>
+        </div>
+      </div>
+
+      <div class="admin-layout">
+        <div class="panel admin-panel">
+          <h3>Add venue</h3>
+          <div class="form-grid two" style="margin-top: 14px;">
+            <input id="name" placeholder="Venue name" />
+            <input id="type" placeholder="Type" />
+            <input id="city" placeholder="City" />
+            <input id="suburb" placeholder="Suburb" />
+            <input id="address" placeholder="Address" />
+            <input id="mapsUrl" placeholder="Maps URL" />
+            <select id="status">
+              <option value="wishlist">Wishlist</option>
+              <option value="visited">Visited</option>
+              <option value="closed">Closed</option>
+            </select>
+            <select id="favourite">
+              <option value="false">Not favourite</option>
+              <option value="true">Favourite</option>
+            </select>
+          </div>
+          <div class="form-grid" style="margin-top: 10px;">
+            <textarea id="description" placeholder="Description" rows="4"></textarea>
+            <button id="addVenueBtn" class="success">Add venue</button>
+          </div>
+
+          <hr style="border-color: var(--border); margin: 18px 0;" />
+
+          <h3>Replace list</h3>
+          <p class="small">Upload a JSON file to overwrite the current venue list.</p>
+          <div class="form-grid">
+            <input id="uploadFile" type="file" accept=".json,application/json" />
+            <button id="uploadBtn" class="primary">Upload replacement list</button>
+          </div>
+
+          <hr style="border-color: var(--border); margin: 18px 0;" />
+
+          <h3>Add extra venues</h3>
+          <p class="small">Upload a JSON file to add extra venues without replacing the current list. Duplicate IDs are skipped.</p>
+          <div class="form-grid">
+            <input id="appendFile" type="file" accept=".json,application/json" />
+            <button id="appendBtn" class="success">Upload and add venues</button>
+          </div>
+
+          <hr style="border-color: var(--border); margin: 18px 0;" />
+
+          <h3>Export</h3>
+          <p class="small">Download the current venue list as JSON.</p>
+          <button id="exportBtn" class="soft">Export current list</button>
+        </div>
+
+        <div class="panel admin-main">
+          <div class="topbar" style="margin-bottom: 8px;">
+            <div>
+              <h3>Current venues</h3>
+              <div class="small">Inline editing. Click save on the row you changed.</div>
+            </div>
+            <input id="adminSearch" style="max-width: 320px;" placeholder="Search venues" />
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>City / Suburb</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Favourite</th>
+                  <th>Description</th>
+                  <th>Maps</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="adminTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin.js"></script>
+  <script src="/register-sw.js"></script>
+</body>
+</html>
