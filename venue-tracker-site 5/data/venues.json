@@ -1,0 +1,38 @@
+[
+  {
+    "id": "syd-old-mates-place",
+    "name": "Old Mate's Place",
+    "city": "Sydney",
+    "suburb": "CBD",
+    "type": "Bar",
+    "status": "visited",
+    "favourite": true,
+    "description": "Hidden rooftop cocktail bar with a good crowd and city views.",
+    "address": "199 Clarence St, Sydney NSW 2000",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Old+Mate%27s+Place+Sydney"
+  },
+  {
+    "id": "mel-siglo",
+    "name": "Siglo",
+    "city": "Melbourne",
+    "suburb": "CBD",
+    "type": "Rooftop Bar",
+    "status": "wishlist",
+    "favourite": false,
+    "description": "Classic rooftop for drinks with a polished but not too try-hard feel.",
+    "address": "2/161 Spring St, Melbourne VIC 3000",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Siglo+Melbourne"
+  },
+  {
+    "id": "la-jumbo-s-clown-room",
+    "name": "Jumbo's Clown Room",
+    "city": "Los Angeles",
+    "suburb": "Hollywood",
+    "type": "Bar",
+    "status": "wishlist",
+    "favourite": true,
+    "description": "Chaotic icon. Divey, legendary, and never pretending to be tasteful.",
+    "address": "5153 Hollywood Blvd, Los Angeles, CA 90027",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Jumbo%27s+Clown+Room+Los+Angeles"
+  }
+]

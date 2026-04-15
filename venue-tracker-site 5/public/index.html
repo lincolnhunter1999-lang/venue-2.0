@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venue Tracker</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div>
+        <h1>Venue Tracker</h1>
+        <div class="subtitle">Search by city, suburb, type, status, and favourites.</div>
+      </div>
+      <a href="/admin"><button class="soft">Admin</button></a>
+    </div>
+
+    <div class="panel filters">
+      <input id="searchInput" type="text" placeholder="Search name or description" />
+      <select id="cityFilter"></select>
+      <select id="suburbFilter"></select>
+      <select id="typeFilter"></select>
+      <select id="statusFilter">
+        <option value="">All statuses</option>
+        <option value="visited">Visited</option>
+        <option value="wishlist">Wishlist</option>
+        <option value="closed">Closed</option>
+      </select>
+      <select id="favouriteFilter">
+        <option value="">All favourites</option>
+        <option value="true">Favourites only</option>
+      </select>
+    </div>
+
+    <div class="stats" id="stats"></div>
+    <div class="grid" id="venueGrid"></div>
+    <div class="panel empty hidden" id="emptyState">No venues match those filters. Very rude of them.</div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script src="/register-sw.js"></script>
+</body>
+</html>
